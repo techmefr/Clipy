@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 320px;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+        }
+        
+        .config-section {
+            display: none;
+        }
+        
+        .main-section {
+            text-align: center;
+        }
+        
+        h2 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px 0;
+            font-weight: 500;
+            color: #555;
+            font-size: 13px;
+        }
+        
+        textarea, input[type="url"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        
+        textarea {
+            height: 60px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #5865F2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 5px 0 5px;
+            transition: background 0.2s;
+        }
+        
+        button:hover {
+            background: #4752C4;
+        }
+        
+        button.secondary {
+            background: #6c757d;
+        }
+        
+        button.secondary:hover {
+            background: #5a6268;
+        }
+        
+        .success {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .help-text {
+            font-size: 11px;
+            color: #666;
+            margin-top: 3px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-section" class="main-section">
+        <h2>📎 Clipy</h2>
+        <button id="copy-btn">Copier vers Discord</button>
+        <br>
+        <button id="config-btn" class="secondary">⚙️ Configuration</button>
+    </div>
+
+    <div id="config-section" class="config-section">
+        <h2>Configuration</h2>
+        
+        <label for="remove-words">Mots à supprimer du titre :</label>
+        <textarea id="remove-words" placeholder="[Draft], WIP, 🚧, [TEMP]"></textarea>
+        <div class="help-text">Séparez par des virgules</div>
+        
+        <label for="add-words">Mots à ajouter à la fin :</label>
+        <textarea id="add-words" placeholder="@here, #merge-request"></textarea>
+        <div class="help-text">Séparez par des virgules</div>
+        
+        <label for="discord-url">Lien Discord :</label>
+        <input type="url" id="discord-url" placeholder="https://discord.com/channels/...">
+        
+        <button id="save-btn">Sauvegarder</button>
+        <button id="back-btn" class="secondary">Retour</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
